@@ -1,0 +1,27 @@
+<h1><%= @user.name %>の詳細</h1>
+<p>
+  <strong><%= t('activerecord.attributes.user.name') %>:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.user.mail') %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.user.post_code') %>:</strong>
+  <%= @user.post_code %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.user.address') %>:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.user.self_introduction') %>:</strong>
+  <%= @user.self_introduction %>
+</p>
+
+<%= link_to t('activerecord.attributes.user.back'), users_index_path %>

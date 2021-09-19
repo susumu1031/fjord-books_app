@@ -1,0 +1,22 @@
+<h1>ユーザー一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.user.name') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td> 
+        <td><%= link_to t('activerecord.attributes.user.show'), users_show_path(id: "#{user.id}") %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('activerecord.attributes.user.account_edit'), edit_user_registration_path %> |
+  <%= link_to t('activerecord.attributes.user.logout'), destroy_user_session_path, method: :delete %>
+<p><%= link_to t('activerecord.attributes.user.books'), books_path %></p>
