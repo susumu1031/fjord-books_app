@@ -1,0 +1,17 @@
+<h1><%= t("title.followeds") %></h1>
+
+<table>
+  <% @followeds.each do |user| %>
+    <tr>
+      <td>
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar.variant(resize_to_limit: [30, 30]) %>
+        <% end %>
+      </td>
+      <td><%= link_to user.name, user_path(user) %></td>
+      <td><%= user.self_introduction %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t("button.back"), user_path %>
